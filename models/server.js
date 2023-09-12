@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const { dbConnection } = require('../database/config');
+const {Router} = require('express'); 
 
 class Server{
 
@@ -32,11 +33,16 @@ class Server{
 
 
         //Directorio publico
-         this.app.use( express.static('public') );
+         this.app.use( '/error',express.static('public') );
     }
 
     routes(){
        
+     
+        this.app.use('/', require('../routes/principal'));
+
+
+
         this.app.use(this.usuariosPath, require('../routes/usuarios'));
     }
 
