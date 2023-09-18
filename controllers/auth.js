@@ -96,7 +96,7 @@ const googleSingIn = async ( req, res= response) =>{
         });
     }catch( error) {
         res.status(400).json({
-            ok: false,
+            
             msg: 'El token no se pudo verificar'
         })
 

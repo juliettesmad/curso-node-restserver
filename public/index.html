@@ -27,7 +27,6 @@
         Singout
     </button>
 
-      <script src="https://accounts.google.com/gsi/client" async defer></script>
       
       <script>
          function handleCredentialResponse(response) {
@@ -58,6 +57,7 @@
             google.accounts.id.disableAutoSelect()
 
             google.accounts.id.revoke( localStorage.getItem('email'), done =>{
+               console.log('consent revoked');
                 localStorage.clear();
                 location.reload();
 
@@ -65,5 +65,7 @@
 
         }
        </script>
+       <script src="https://accounts.google.com/gsi/client" async defer></script>
+      
 </body>
 </html>
